@@ -1,0 +1,204 @@
+/* Загальні стилі */ 
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #2b2d42;
+    color: #edf2f4;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    letter-spacing: 1px;
+}
+
+/* Постійна навігаційна панель */
+nav {
+    background-color: #2b2d42;
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    position: relative; /* Позиціювання для підменю */
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #edf2f4;
+    font-weight: bold;
+    padding: 1px 20px;
+    border-radius: 5px;
+    background-color: #d90429;
+    transition: background-color 0.3s;
+}
+
+/* Кнопки завжди видимі */
+nav ul li:hover > a {
+    background-color: #b80021; /* Темніше відтінок при наведенні */
+}
+
+nav .submenu {
+    display: none; /* Сховати підменю за замовчуванням */
+    position: absolute; /* Позиціювання для підменю */
+    left: 0;
+    top: 100%; /* Розташування підменю під основним меню */
+    background-color: #d90429; /* Фон підменю */
+    padding: 10px 0;
+    border-radius: 5px;
+    z-index: 1; /* Забезпечити, щоб підменю було вище */
+}
+
+nav ul li:hover .submenu {
+    display: block; /* Показати підменю при наведенні */
+}
+
+nav .submenu li {
+    display: block; /* Вирівнювання підменю вертикально */
+    margin: 0;
+}
+
+main {
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.image-container {
+    position: relative; /* Необхідно для абсолютного позиціювання overlay */
+    display: inline-block; /* Дозволяє розмістити контейнер на основі контенту */
+}
+
+.image-container img {
+    width: 100%; /* Або задайте конкретну ширину */
+    height: auto; /* Зберігає пропорції зображення */
+    border-radius: 10px; /* Заокруглені кути зображення */
+    opacity: 0.5; /* Тьмяне зображення */
+    transition: opacity 0.3s ease; /* Плавний перехід */
+}
+
+.image-container .overlay {
+    position: absolute; /* Абсолютне позиціювання для перекриття */
+    top: 50%; /* Центрування по вертикалі */
+    left: 50%; /* Центрування по горизонталі */
+    transform: translate(-50%, -50%); /* Переміщення на 50% ширини та висоти */
+    color: white; /* Колір тексту */
+    font-size: 1.5em; /* Розмір шрифту */
+    text-align: center; /* Центрування тексту */
+    pointer-events: none; /* Забезпечує, що навігація не блокується текстом */
+}
+
+/* Додатковий ефект при наведенні */
+.image-container:hover img {
+    opacity: 1; /* Зображення стає повністю видимим */
+}
+
+.image-container:hover .overlay {
+    display: none; /* Текст зникає при наведенні на зображення */
+}
+
+
+
+
+/* Кнопка прокрутки вгору */
+.scroll-top {
+    position: fixed;
+    bottom: 5px;
+    left: 1400px;
+    background-color: #d90429;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    padding: 10px 15px;
+    font-size: 1.5em;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    display: none; /* Сховати кнопку за замовчуванням */
+    z-index: 100; /* Забезпечити, щоб кнопка була поверх інших елементів */
+}
+
+.scroll-top:hover {
+    background-color: #b80021; /* Темніше при наведенні */
+}
+
+footer {
+    background-color: #2b2d42;
+    color: #edf2f4;
+    text-align: center;
+    padding: 15px 0;
+}
+
+footer p {
+    margin: 0;
+}
+
+
+form label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+    color: #2b2d42;
+    font-size: 1.1em;
+}
+
+form input, form textarea, form select {
+    width: 100%;
+    padding: 14px;
+    margin-top: 8px;
+    border-radius: 8px;
+    border: 1px solid #d1d1d1;
+    background-color: #f9f9f9;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+
+form button {
+    padding: 15px 20px;
+    background-color: #2b2d42;
+    color: #edf2f4;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1em;
+    margin-top: 20px;
+    width: 48%;
+    display: inline-block;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+form button[type="submit"] {
+    background-color: #d90429;
+}
+
+form button:hover {
+    background-color: #b80021;
+    transform: scale(1.05);
+}
+
+form .button-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}

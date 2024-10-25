@@ -1,0 +1,89 @@
+<!DOCTYPE html> 
+<head>
+    <title>Мій блог про волейбол</title>
+    <title>підказка</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Мій блог про волейбол</h1>
+    </header>
+    <label for="site-search">Пошук на сайті:</label>
+    <input type="search" id="site-search" name="q" />
+
+    <button>Шукати</button>
+    <nav>
+        <ul>
+            <li><a href="index.html">Головна</a></li>
+            <li>
+                <a href="opytuvalnyk.html">Опитувальник ▾</a>
+                <ul class="submenu">
+                    <li><a href="#">Підменю 1</a></li>
+                    <li><a href="#">Підменю 2</a></li>
+                </ul>
+            </li>
+            <li><a href="other.html">Інше</a></li> 
+            <li><a href="nagorody.html">Досягнення</a></li> 
+        </ul>
+    </nav>
+
+    <main>
+        <section class="image-section">
+            <h2>А чи знали ви що, волейбол потрапив до топ-10 найпопулярніших видів спорту на планеті!</h2>
+            <p>На фото зображена літня олімпіада з волейболу 2020</p>
+            <div class="image-container">
+                <img src="images/volleyball.jpg" alt="Волейбол" />
+                <div class="overlay">Волейбол</div>
+            </div>
+        </section>
+    </main>
+        <section class="feedback-section my-5">
+            <h2>Відгуки користувачів</h2>
+            <div class="feedback bg-light p-3 rounded">
+                <p>"Цей блог надзвичайно цікавий!" - Анна</p>
+                <p>"Чудова інформація про волейбол!" - Ігор</p>
+                <p>"Я дізнався багато нового!" - Марія</p>
+            </div>
+        <section id="feedback" class="container mt-5">
+            <h2 class="text-center">Зворотний зв'язок</h2>
+            <form>
+                <div class="form-group">
+                    <label for="userFeedback">Ваш відгук</label>
+                    <textarea class="form-control" id="userFeedback" rows="3" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary mt-2">Надіслати</button>
+            </form>
+        </section>
+        <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true" >
+                    <h2 class="modal-title" id="loginModalLabel">Авторизація</h2>
+                    </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="username">Ім'я користувача</label>
+                            <input type="text" class="form-control" id="username" required >
+                        </div>
+                        <div class="form-group mt-2">
+                            <label for="password">Пароль</label>
+                            <input type="password" class="form-control" id="password" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary mt-3">Увійти</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    <button class="scroll-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">Вверх</button>
+
+
+    <script>
+        window.onscroll = function() {
+            const scrollButton = document.querySelector('.scroll-top');
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                scrollButton.style.display = "block";
+            } else {
+                scrollButton.style.display = "none";
+            }
+        };
+    </script>
+</body>
+</html>
